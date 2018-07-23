@@ -9,7 +9,7 @@ import { Http } from '@angular/http'
 
 export class AppComponent {
     
-    constructor(@Inject(Http) http) {
+    constructor() {
         
     }
 }
