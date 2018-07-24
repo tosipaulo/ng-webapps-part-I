@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core'
+import { Component } from '@angular/core'
 import { Http } from '@angular/http'
 
 @Component({
@@ -9,7 +9,11 @@ import { Http } from '@angular/http'
 
 export class AppComponent {
     
-    constructor() {
-        
+    fotos: Object[] = [];
+
+    constructor(http: Http) {
+        http.get('v1/fotos')
+            .map(res => res.json())
+            .subscribe(fotos => this.fotos = fotos)
     }
 }
